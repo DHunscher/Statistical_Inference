@@ -1,7 +1,8 @@
 ---
 output:
-  html_document: default
+  word_document: default
   pdf_document: default
+  html_document: default
 ---
 
 ### Statistical Inference Course Project 
@@ -16,9 +17,9 @@ Creation Date: Tuesday, 24 April 2018
 
 We will be investigating the ToothGrowth data set from the R datasets package. We'll start by getting familiar with the data set, using exploratory statistical techniques. Then we posit some hypotheses with respect to the effects of choice of dietary supplement and dosage level. Finally we'll summarize the conclusions we can draw from our investigation.
 
-##### Setup
+<!-- ##### Setup -->
 
-First we set our working directory, load libraries, intialize some variables we'll be using later on. 
+<!-- First we set our working directory, load libraries, intialize some variables we'll be using later on.  -->
 
 ```{r eval = TRUE, echo = FALSE }
 setwd("/Users/dalehunscher/Dropbox/Coursera/Statistical_Inference/project")
@@ -41,7 +42,7 @@ doses <- c(0.5,1.0,2.0)
 
 ##### Exploratory Analysis
 
-Now we'll produce a summary of the data set and see what we can learn from it.
+Let's look at a summary of the data set and see what we can learn from it.
 
 ```{r eval = TRUE, echo = FALSE }
 
@@ -49,7 +50,7 @@ summary(tooth)
 
 ```
 
-We have 60 data points.30 associated with the dietary supplement) factor "OJ" (ascorbic acid in orange juice), and the remaining 30 with "VC" (pure ascorbic acid). Each row contains a tooth length value (len column), a dietary supplement factor (supp column), and a dosage value (dose column).
+We have 60 data points, 30 of which are associated with the dietary supplement factor "OJ" (ascorbic acid in orange juice), and the remaining 30 with "VC" (pure ascorbic acid). Each row contains a tooth length growth value (len column), a dietary supplement factor (supp column), and a dosage value (dose column).
 
 ```{r eval = TRUE, echo = FALSE }
 
@@ -101,7 +102,7 @@ result <- t.test(oj.group$len[which(oj.group$dose == 1.0)],vc.group$len[which(vc
 
 ```
 
-P-value is `r result$p.value`.
+P-value is 0.0005191879.
 
 The P-value is less than 0.95, at 95% confidence level, so we can reject the null hypothesis. At a dose of 1.0 mg/day, ascorbic acid via orange juice is more effective than pure ascorbic acid alone.
 
@@ -129,3 +130,8 @@ Our analysis would be incomplete if we did not also look at the significance of 
 
 * At the highest dosage level tested, 2.0 mg/day, the performance of orange juice and pure ascorbic acid are roughly equivalent.
 
+##### Appendix
+
+The Rmd source code for my project documents can be found at https://github.com/DHunscher/Statistical_Inference/tree/master/project 
+
+To avoid tempting others to plagiarism, this repository will be removed from public view after course grades have been announced. The document ending in Appendix is an expanded version of both parts 1 and 2 combined, each part too large to be submitted for this course. This document exposes all code used. 
